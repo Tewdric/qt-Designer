@@ -1,0 +1,363 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>MainWindow</class>
+ <widget class="QMainWindow" name="MainWindow">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>476</width>
+    <height>531</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>MainWindow</string>
+  </property>
+  <property name="styleSheet">
+   <string notr="true"/>
+  </property>
+  <widget class="QWidget" name="centralwidget">
+   <property name="styleSheet">
+    <string notr="true">QWidget{
+	background-color:qradialgradient(spread:reflect, cx:0.886364, cy:0.176, radius:1.584, fx:0.938, fy:0, stop:0.482955 rgba(0, 61, 102, 255), stop:1 rgba(255, 255, 255, 255))
+}</string>
+   </property>
+   <widget class="QTableWidget" name="tableWidget">
+    <property name="geometry">
+     <rect>
+      <x>0</x>
+      <y>290</y>
+      <width>481</width>
+      <height>221</height>
+     </rect>
+    </property>
+    <property name="sizePolicy">
+     <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
+      <horstretch>0</horstretch>
+      <verstretch>0</verstretch>
+     </sizepolicy>
+    </property>
+    <property name="minimumSize">
+     <size>
+      <width>481</width>
+      <height>0</height>
+     </size>
+    </property>
+    <property name="maximumSize">
+     <size>
+      <width>481</width>
+      <height>16777215</height>
+     </size>
+    </property>
+    <property name="cursor" stdset="0">
+     <cursorShape>PointingHandCursor</cursorShape>
+    </property>
+    <property name="mouseTracking">
+     <bool>false</bool>
+    </property>
+    <property name="focusPolicy">
+     <enum>Qt::WheelFocus</enum>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">QHeaderView::section{
+	background-color:rgba(0,0,0,0.5);
+	color:white;
+
+}
+
+QTableWidget{
+	background-color:rgba(0,0,0,.5);
+	border-radius:10px;
+	gridline-color: rgba(0,0,0,.5);
+	text-align:center;
+}
+QTableWidget::item {
+            padding: 5px; 
+		color: white;
+		width:100px;               /* Espaçamento interno */
+		text-align:center;
+        }
+
+QTableWidget::item:selected {
+            background-color: none;  /* Cor de fundo ao selecionar */
+            color: white;    
+width:100px;
+text-align:center;           /* Cor do texto ao selecionar */
+        }
+        QTableWidget::item:nth-child(odd) {
+           background-color: none;
+width:100px;
+color: white; 
+text-align:center;  /* Cor de fundo para linhas ímpares */
+        }
+        QTableWidget::item:nth-child(even) {
+            background-color: none;
+width:100px;
+	color: white;
+text-align:center;/* Cor de fundo para linhas pares */
+        }</string>
+    </property>
+    <property name="frameShape">
+     <enum>QFrame::NoFrame</enum>
+    </property>
+    <property name="frameShadow">
+     <enum>QFrame::Sunken</enum>
+    </property>
+    <property name="lineWidth">
+     <number>2</number>
+    </property>
+    <property name="showGrid">
+     <bool>true</bool>
+    </property>
+    <property name="gridStyle">
+     <enum>Qt::NoPen</enum>
+    </property>
+    <property name="sortingEnabled">
+     <bool>false</bool>
+    </property>
+    <attribute name="horizontalHeaderVisible">
+     <bool>true</bool>
+    </attribute>
+    <attribute name="horizontalHeaderDefaultSectionSize">
+     <number>200</number>
+    </attribute>
+    <attribute name="horizontalHeaderHighlightSections">
+     <bool>true</bool>
+    </attribute>
+    <attribute name="verticalHeaderVisible">
+     <bool>false</bool>
+    </attribute>
+    <attribute name="verticalHeaderCascadingSectionResizes">
+     <bool>false</bool>
+    </attribute>
+    <row>
+     <property name="text">
+      <string>a</string>
+     </property>
+    </row>
+    <column>
+     <property name="text">
+      <string>Nome</string>
+     </property>
+    </column>
+   </widget>
+   <widget class="QPushButton" name="pushButton_player">
+    <property name="geometry">
+     <rect>
+      <x>150</x>
+      <y>260</y>
+      <width>75</width>
+      <height>23</height>
+     </rect>
+    </property>
+    <property name="cursor">
+     <cursorShape>PointingHandCursor</cursorShape>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">QPushButton {
+    background-color: rgb(24, 24, 24); /* Default background color */
+    color: white;              /* Default text color */
+    border: none;             /* Remove border */         
+    border-radius: 5px;      /* Rounded corners */
+	font-size:15px;
+	font-weight:700;
+	width:100px;
+}
+
+QPushButton:hover {
+    background-color: #45a049; /* Background color on hover */
+
+}</string>
+    </property>
+    <property name="text">
+     <string>Play</string>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="pushButton_pause">
+    <property name="geometry">
+     <rect>
+      <x>240</x>
+      <y>260</y>
+      <width>75</width>
+      <height>23</height>
+     </rect>
+    </property>
+    <property name="cursor">
+     <cursorShape>PointingHandCursor</cursorShape>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">QPushButton {
+    background-color:  rgb(24, 24, 24); /* Default background color */
+    color: white;              /* Default text color */
+    border: none;             /* Remove border */         
+    border-radius: 5px;      /* Rounded corners */
+	font-size:15px;
+	font-weight:700;
+}
+
+QPushButton:hover {
+    background-color: #45a049; /* Background color on hover */
+}</string>
+    </property>
+    <property name="text">
+     <string>Pause</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label_imagem">
+    <property name="geometry">
+     <rect>
+      <x>280</x>
+      <y>20</y>
+      <width>180</width>
+      <height>180</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">QLabel{
+    border-radius: 100px;
+	background-color:none;
+}</string>
+    </property>
+    <property name="text">
+     <string/>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label_nome">
+    <property name="geometry">
+     <rect>
+      <x>10</x>
+      <y>10</y>
+      <width>251</width>
+      <height>81</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <family>Gill Sans Ultra Bold</family>
+      <pointsize>16</pointsize>
+     </font>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">color:white;
+background-color:none;</string>
+    </property>
+    <property name="text">
+     <string/>
+    </property>
+    <property name="alignment">
+     <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+    </property>
+    <property name="wordWrap">
+     <bool>true</bool>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label_art">
+    <property name="geometry">
+     <rect>
+      <x>10</x>
+      <y>100</y>
+      <width>251</width>
+      <height>41</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <pointsize>12</pointsize>
+     </font>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">color:rgb(255, 255, 255);
+background-color:none;
+</string>
+    </property>
+    <property name="text">
+     <string/>
+    </property>
+    <property name="alignment">
+     <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+    </property>
+    <property name="wordWrap">
+     <bool>true</bool>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label_duracao">
+    <property name="geometry">
+     <rect>
+      <x>190</x>
+      <y>140</y>
+      <width>71</width>
+      <height>21</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">background-color:none;
+color:white;</string>
+    </property>
+    <property name="text">
+     <string/>
+    </property>
+   </widget>
+   <widget class="QSlider" name="sliderProgress">
+    <property name="geometry">
+     <rect>
+      <x>40</x>
+      <y>230</y>
+      <width>401</width>
+      <height>22</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">QSlider::groove:horizontal {
+    border: 1px solid #bbb;
+    background: #eee;
+    height: 8px;
+    border-radius: 4px;
+}
+
+QSlider::handle:horizontal {
+    background: rgb(255, 85, 0);
+    border: 1px solid #ff2200;
+    width: 14px;
+    height: 14px;
+    margin: -3px 0;
+    border-radius: 7px;
+}
+
+QSlider::handle:horizontal:hover {
+    background: #ff2200;
+}
+
+QSlider::sub-page:horizontal {
+    background: #ff5733;
+    border-radius: 4px;
+}
+
+QSlider::add-page:horizontal {
+    background: #ddd;
+    border-radius: 4px;
+}
+</string>
+    </property>
+    <property name="maximum">
+     <number>100</number>
+    </property>
+    <property name="orientation">
+     <enum>Qt::Horizontal</enum>
+    </property>
+   </widget>
+  </widget>
+  <widget class="QMenuBar" name="menubar">
+   <property name="geometry">
+    <rect>
+     <x>0</x>
+     <y>0</y>
+     <width>476</width>
+     <height>21</height>
+    </rect>
+   </property>
+  </widget>
+  <widget class="QStatusBar" name="statusbar"/>
+ </widget>
+ <resources/>
+ <connections/>
+</ui>
