@@ -88,28 +88,30 @@ class Ui_MainWindow(object):
         self.tableWidget.verticalHeader().setVisible(False)
         self.tableWidget.verticalHeader().setCascadingSectionResizes(False)
         self.pushButton_player = QtWidgets.QPushButton(self.centralwidget)
-        self.pushButton_player.setGeometry(QtCore.QRect(150, 260, 75, 23))
+        self.pushButton_player.setGeometry(QtCore.QRect(210, 260, 21, 23))
         self.pushButton_player.setCursor(QtGui.QCursor(QtCore.Qt.PointingHandCursor))
         self.pushButton_player.setStyleSheet("QPushButton {\n"
-"    background-color: rgb(24, 24, 24); /* Default background color */\n"
+"    background-color:none; /* Default background color */\n"
 "    color: white;              /* Default text color */\n"
 "    border: none;             /* Remove border */         \n"
-"    border-radius: 5px;      /* Rounded corners */\n"
+"    border-radius: 10px;      /* Rounded corners */\n"
 "    font-size:15px;\n"
 "    font-weight:700;\n"
 "    width:100px;\n"
+"\n"
 "}\n"
 "\n"
-"QPushButton:hover {\n"
-"    background-color: #45a049; /* Background color on hover */\n"
-"\n"
-"}")
+"")
+        self.pushButton_player.setText("")
+        icon = QtGui.QIcon()
+        icon.addPixmap(QtGui.QPixmap("icon/botao-play-ponta-de-seta.png"), QtGui.QIcon.Normal, QtGui.QIcon.Off)
+        self.pushButton_player.setIcon(icon)
         self.pushButton_player.setObjectName("pushButton_player")
         self.pushButton_pause = QtWidgets.QPushButton(self.centralwidget)
-        self.pushButton_pause.setGeometry(QtCore.QRect(240, 260, 75, 23))
+        self.pushButton_pause.setGeometry(QtCore.QRect(240, 260, 21, 23))
         self.pushButton_pause.setCursor(QtGui.QCursor(QtCore.Qt.PointingHandCursor))
         self.pushButton_pause.setStyleSheet("QPushButton {\n"
-"    background-color:  rgb(24, 24, 24); /* Default background color */\n"
+"    background-color:none; /* Default background color */\n"
 "    color: white;              /* Default text color */\n"
 "    border: none;             /* Remove border */         \n"
 "    border-radius: 5px;      /* Rounded corners */\n"
@@ -117,9 +119,11 @@ class Ui_MainWindow(object):
 "    font-weight:700;\n"
 "}\n"
 "\n"
-"QPushButton:hover {\n"
-"    background-color: #45a049; /* Background color on hover */\n"
-"}")
+"")
+        self.pushButton_pause.setText("")
+        icon1 = QtGui.QIcon()
+        icon1.addPixmap(QtGui.QPixmap("icon/pausa.png"), QtGui.QIcon.Normal, QtGui.QIcon.Off)
+        self.pushButton_pause.setIcon(icon1)
         self.pushButton_pause.setObjectName("pushButton_pause")
         self.label_imagem = QtWidgets.QLabel(self.centralwidget)
         self.label_imagem.setGeometry(QtCore.QRect(280, 20, 180, 180))
@@ -194,6 +198,54 @@ class Ui_MainWindow(object):
         self.sliderProgress.setMaximum(100)
         self.sliderProgress.setOrientation(QtCore.Qt.Horizontal)
         self.sliderProgress.setObjectName("sliderProgress")
+        self.pushButton_next_song = QtWidgets.QPushButton(self.centralwidget)
+        self.pushButton_next_song.setGeometry(QtCore.QRect(270, 260, 21, 23))
+        self.pushButton_next_song.setCursor(QtGui.QCursor(QtCore.Qt.PointingHandCursor))
+        self.pushButton_next_song.setStyleSheet("    background-color:none; /* Default background color */\n"
+"    color: white;              /* Default text color */\n"
+"    border: none;             /* Remove border */         \n"
+"    border-radius: 10px;      /* Rounded corners */\n"
+"    font-size:15px;\n"
+"    font-weight:700;\n"
+"    width:100px;\n"
+"")
+        self.pushButton_next_song.setText("")
+        icon2 = QtGui.QIcon()
+        icon2.addPixmap(QtGui.QPixmap("icon/proximo.png"), QtGui.QIcon.Normal, QtGui.QIcon.Off)
+        self.pushButton_next_song.setIcon(icon2)
+        self.pushButton_next_song.setObjectName("pushButton_next_song")
+        self.pushButton_previous_song = QtWidgets.QPushButton(self.centralwidget)
+        self.pushButton_previous_song.setGeometry(QtCore.QRect(180, 260, 21, 23))
+        self.pushButton_previous_song.setCursor(QtGui.QCursor(QtCore.Qt.PointingHandCursor))
+        self.pushButton_previous_song.setStyleSheet("    background-color:none; /* Default background color */\n"
+"    color: white;              /* Default text color */\n"
+"    border: none;             /* Remove border */         \n"
+"    border-radius: 10px;      /* Rounded corners */\n"
+"    font-size:15px;\n"
+"    font-weight:700;\n"
+"    width:100px;\n"
+"")
+        self.pushButton_previous_song.setText("")
+        icon3 = QtGui.QIcon()
+        icon3.addPixmap(QtGui.QPixmap("icon/anterior.png"), QtGui.QIcon.Normal, QtGui.QIcon.Off)
+        self.pushButton_previous_song.setIcon(icon3)
+        self.pushButton_previous_song.setObjectName("pushButton_previous_song")
+        self.pushButton_random = QtWidgets.QPushButton(self.centralwidget)
+        self.pushButton_random.setGeometry(QtCore.QRect(290, 260, 21, 23))
+        self.pushButton_random.setCursor(QtGui.QCursor(QtCore.Qt.PointingHandCursor))
+        self.pushButton_random.setStyleSheet("    background-color:none; /* Default background color */\n"
+"    color: white;              /* Default text color */\n"
+"    border: none;             /* Remove border */         \n"
+"    border-radius: 10px;      /* Rounded corners */\n"
+"    font-size:15px;\n"
+"    font-weight:700;\n"
+"    width:100px;\n"
+"")
+        self.pushButton_random.setText("")
+        icon4 = QtGui.QIcon()
+        icon4.addPixmap(QtGui.QPixmap("icon/aleatorio.png"), QtGui.QIcon.Normal, QtGui.QIcon.Off)
+        self.pushButton_random.setIcon(icon4)
+        self.pushButton_random.setObjectName("pushButton_random")
         MainWindow.setCentralWidget(self.centralwidget)
         self.menubar = QtWidgets.QMenuBar(MainWindow)
         self.menubar.setGeometry(QtCore.QRect(0, 0, 476, 21))
@@ -214,8 +266,6 @@ class Ui_MainWindow(object):
         item.setText(_translate("MainWindow", "a"))
         item = self.tableWidget.horizontalHeaderItem(0)
         item.setText(_translate("MainWindow", "Nome"))
-        self.pushButton_player.setText(_translate("MainWindow", "Play"))
-        self.pushButton_pause.setText(_translate("MainWindow", "Pause"))
 
 
 if __name__ == "__main__":

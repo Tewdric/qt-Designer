@@ -1,5 +1,6 @@
 import sys
 import os
+import random
 
 from PyQt5.QtWidgets import QApplication, QMainWindow, QMessageBox, QTableWidgetItem, QTableWidget,QSlider,QVBoxLayout
 from PyQt5.QtGui import QPixmap
@@ -13,34 +14,35 @@ class player(QMainWindow):
         super(player, self).__init__()
         self.ui = Ui_MainWindow()
         self.ui.setupUi(self)
-    
-        songs=[
+
+        self.numero = 0 
+        songs=[ 
         {   
-            'Posição': '1',
+            'Posição': '0',
             'nome_musica': 'Amanhã não se sabe',
             'duracao': '4:41',
             'art': 'LS Jack'
         },
         {
-            'Posição': '2',
+            'Posição': '1',
             'nome_musica': 'Walk',
             'duracao': '5:58',
             'art': 'Foo Fighters'
         },
         {
-            'Posição': '3',
+            'Posição': '2',
             'nome_musica': 'My Way',
             'duracao': '4:34',
             'art': 'Frank Sinatra'
         },
         {
-            'Posição': '4',
+            'Posição': '3',
             'nome_musica': 'La vie en rose',
             'duracao': '3:23',
             'art': 'Louis Armstrong'
         },
         {
-            'Posição': '5',
+            'Posição': '4',
             'nome_musica': "Can't Help Falling In Love",
             'duracao': '3:00',
             'art': 'Elvis Presley'
@@ -53,6 +55,15 @@ class player(QMainWindow):
         self.ui.pushButton_player.clicked.connect(self.play_music)
         self.ui.pushButton_pause.clicked.connect(self.pause_music)
         self.ui.tableWidget.itemClicked.connect(self.selecionar_musica)
+        self.ui.pushButton_random.clicked.connect(lambda: self.random_music(songs))
+        
+        
+        
+        while True:
+            self.ui.pushButton_next_song.clicked.connect(lambda: self.next_music())
+            self.ui.pushButton_previous_song.clicked.connect(lambda: self.previous_music())
+
+            break
         
         self.image_dir = "imagens/"
         self.image_files = self.get_image_files()
@@ -94,40 +105,41 @@ class player(QMainWindow):
             self.ui.label_imagem.setScaledContents(True)
 
     def selecionar_musica(self):
+        
         songs=[
         {   
-            'Posição': '1',
+            'Posição': '0',
             'nome_musica': 'Amanhã não se sabe',
             'duracao': '4:41',
             'art': 'LS Jack'
         },
         {
-            'Posição': '2',
+            'Posição': '1',
             'nome_musica': 'Walk',
             'duracao': '5:58',
             'art': 'Foo Fighters'
         },
         {
-            'Posição': '3',
+            'Posição': '2',
             'nome_musica': 'My Way',
             'duracao': '4:34',
             'art': 'Frank Sinatra'
         },
         {
-            'Posição': '4',
+            'Posição': '3',
             'nome_musica': 'La vie en rose',
             'duracao': '3:23',
             'art': 'Louis Armstrong'
         },
         {
-            'Posição': '5',
+            'Posição': '4',
             'nome_musica': "Can't Help Falling In Love",
             'duracao': '3:00',
             'art': 'Elvis Presley'
         }
         ]
         index = self.ui.tableWidget.currentRow()
-
+        
         if index >= 0:
             
             musica_selecionada = songs[index]
@@ -136,7 +148,7 @@ class player(QMainWindow):
             self.ui.label_duracao.setText(musica_selecionada['duracao'])
 
             res = int(musica_selecionada['Posição'])
-            self.load_image(res-1)
+            self.load_image(res)
             
             file_name = "musicas/" + musica_selecionada['nome_musica'] + ".mp3"
             if not os.path.exists(file_name):
@@ -145,7 +157,147 @@ class player(QMainWindow):
     
             self.media_player.setMedia(QMediaContent(QUrl.fromLocalFile(file_name)))
             self.media_player.play()
+    
+    def next_music(self):
+        self.numero += 1
+        if self.numero == 5:
+            self.numero = 0
+        songs=[
+        {   
+            'Posição': '0',
+            'nome_musica': 'Amanhã não se sabe',
+            'duracao': '4:41',
+            'art': 'LS Jack'
+        },
+        {
+            'Posição': '1',
+            'nome_musica': 'Walk',
+            'duracao': '5:58',
+            'art': 'Foo Fighters'
+        },
+        {
+            'Posição': '2',
+            'nome_musica': 'My Way',
+            'duracao': '4:34',
+            'art': 'Frank Sinatra'
+        },
+        {
+            'Posição': '3',
+            'nome_musica': 'La vie en rose',
+            'duracao': '3:23',
+            'art': 'Louis Armstrong'
+        },
+        {
+            'Posição': '4',
+            'nome_musica': "Can't Help Falling In Love",
+            'duracao': '3:00',
+            'art': 'Elvis Presley'
+        }
+        ]
+        index = self.ui.tableWidget.currentRow()
+        index += self.numero
+        print(index)
         
+        if index == len(songs):
+            index = 0
+        if index >= 0:
+            
+            musica_selecionada = songs[index]
+            self.ui.label_nome.setText(musica_selecionada['nome_musica'])
+            self.ui.label_art.setText(musica_selecionada['art'])
+            self.ui.label_duracao.setText(musica_selecionada['duracao'])
+
+            res = int(musica_selecionada['Posição'])
+            self.load_image(res)
+            
+            file_name = "musicas/" + musica_selecionada['nome_musica'] + ".mp3"
+            if not os.path.exists(file_name):
+                QMessageBox.critical(self, "Erro", "A musica selecionada nao foi encontrada.")
+                return
+            
+            self.media_player.setMedia(QMediaContent(QUrl.fromLocalFile(file_name)))
+            self.media_player.play()
+
+    def previous_music(self):
+        self.numero -= 1
+        if self.numero < 0:
+            self.numero = 0
+        songs=[
+        {   
+            'Posição': '0',
+            'nome_musica': 'Amanhã não se sabe',
+            'duracao': '4:41',
+            'art': 'LS Jack'
+        },
+        {
+            'Posição': '1',
+            'nome_musica': 'Walk',
+            'duracao': '5:58',
+            'art': 'Foo Fighters'
+        },
+        {
+            'Posição': '2',
+            'nome_musica': 'My Way',
+            'duracao': '4:34',
+            'art': 'Frank Sinatra'
+        },
+        {
+            'Posição': '3',
+            'nome_musica': 'La vie en rose',
+            'duracao': '3:23',
+            'art': 'Louis Armstrong'
+        },
+        {
+            'Posição': '4',
+            'nome_musica': "Can't Help Falling In Love",
+            'duracao': '3:00',
+            'art': 'Elvis Presley'
+        }
+        ]
+        index = self.ui.tableWidget.currentRow()
+        index += self.numero
+        print(index)
+        if index == 0:
+            index = 0
+        if index >= 0:
+            
+            musica_selecionada = songs[index]
+            self.ui.label_nome.setText(musica_selecionada['nome_musica'])
+            self.ui.label_art.setText(musica_selecionada['art'])
+            self.ui.label_duracao.setText(musica_selecionada['duracao'])
+
+            res = int(musica_selecionada['Posição'])
+            self.load_image(res)
+            
+            file_name = "musicas/" + musica_selecionada['nome_musica'] + ".mp3"
+            if not os.path.exists(file_name):
+                QMessageBox.critical(self, "Erro", "A musica selecionada nao foi encontrada.")
+                return
+            
+            self.media_player.setMedia(QMediaContent(QUrl.fromLocalFile(file_name)))
+            self.media_player.play()
+
+    def random_music(self, songs):
+        num_aleatorio = random.randint(0, 4)
+        self.numero = num_aleatorio
+        index = num_aleatorio
+        if index >= 0:
+            
+            musica_selecionada = songs[index]
+            self.ui.label_nome.setText(musica_selecionada['nome_musica'])
+            self.ui.label_art.setText(musica_selecionada['art'])
+            self.ui.label_duracao.setText(musica_selecionada['duracao'])
+
+            res = int(musica_selecionada['Posição'])
+            self.load_image(res)
+            
+            file_name = "musicas/" + musica_selecionada['nome_musica'] + ".mp3"
+            if not os.path.exists(file_name):
+                QMessageBox.critical(self, "Erro", "A musica selecionada nao foi encontrada.")
+                return
+            
+            self.media_player.setMedia(QMediaContent(QUrl.fromLocalFile(file_name)))
+            self.media_player.play()
     def play_music(self):
         print(self.media_player.state())
         if self.media_player.state() == QMediaPlayer.PausedState:
@@ -161,7 +313,8 @@ class player(QMainWindow):
         duration = self.media_player.duration()
         if duration > 0:
             self.ui.sliderProgress.setValue(int((position / duration) * self.ui.sliderProgress.maximum()))
-
+        if position == self.ui.sliderProgress.maximum():
+            self.next_music()
     def set_duration(self, duration):
         """Define o range correto da barra de progresso."""
         if duration > 0:

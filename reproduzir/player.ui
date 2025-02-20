@@ -144,9 +144,9 @@ text-align:center;/* Cor de fundo para linhas pares */
    <widget class="QPushButton" name="pushButton_player">
     <property name="geometry">
      <rect>
-      <x>150</x>
+      <x>210</x>
       <y>260</y>
-      <width>75</width>
+      <width>21</width>
       <height>23</height>
      </rect>
     </property>
@@ -155,22 +155,24 @@ text-align:center;/* Cor de fundo para linhas pares */
     </property>
     <property name="styleSheet">
      <string notr="true">QPushButton {
-    background-color: rgb(24, 24, 24); /* Default background color */
+    background-color:none; /* Default background color */
     color: white;              /* Default text color */
     border: none;             /* Remove border */         
-    border-radius: 5px;      /* Rounded corners */
+    border-radius: 10px;      /* Rounded corners */
 	font-size:15px;
 	font-weight:700;
 	width:100px;
+
 }
 
-QPushButton:hover {
-    background-color: #45a049; /* Background color on hover */
-
-}</string>
+</string>
     </property>
     <property name="text">
-     <string>Play</string>
+     <string/>
+    </property>
+    <property name="icon">
+     <iconset>
+      <normaloff>icon/botao-play-ponta-de-seta.png</normaloff>icon/botao-play-ponta-de-seta.png</iconset>
     </property>
    </widget>
    <widget class="QPushButton" name="pushButton_pause">
@@ -178,7 +180,7 @@ QPushButton:hover {
      <rect>
       <x>240</x>
       <y>260</y>
-      <width>75</width>
+      <width>21</width>
       <height>23</height>
      </rect>
     </property>
@@ -187,7 +189,7 @@ QPushButton:hover {
     </property>
     <property name="styleSheet">
      <string notr="true">QPushButton {
-    background-color:  rgb(24, 24, 24); /* Default background color */
+    background-color:none; /* Default background color */
     color: white;              /* Default text color */
     border: none;             /* Remove border */         
     border-radius: 5px;      /* Rounded corners */
@@ -195,12 +197,14 @@ QPushButton:hover {
 	font-weight:700;
 }
 
-QPushButton:hover {
-    background-color: #45a049; /* Background color on hover */
-}</string>
+</string>
     </property>
     <property name="text">
-     <string>Pause</string>
+     <string/>
+    </property>
+    <property name="icon">
+     <iconset>
+      <normaloff>icon/pausa.png</normaloff>icon/pausa.png</iconset>
     </property>
    </widget>
    <widget class="QLabel" name="label_imagem">
@@ -343,6 +347,96 @@ QSlider::add-page:horizontal {
     </property>
     <property name="orientation">
      <enum>Qt::Horizontal</enum>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="pushButton_next_song">
+    <property name="geometry">
+     <rect>
+      <x>270</x>
+      <y>260</y>
+      <width>21</width>
+      <height>23</height>
+     </rect>
+    </property>
+    <property name="cursor">
+     <cursorShape>PointingHandCursor</cursorShape>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">    background-color:none; /* Default background color */
+    color: white;              /* Default text color */
+    border: none;             /* Remove border */         
+    border-radius: 10px;      /* Rounded corners */
+	font-size:15px;
+	font-weight:700;
+	width:100px;
+</string>
+    </property>
+    <property name="text">
+     <string/>
+    </property>
+    <property name="icon">
+     <iconset>
+      <normaloff>icon/proximo.png</normaloff>icon/proximo.png</iconset>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="pushButton_previous_song">
+    <property name="geometry">
+     <rect>
+      <x>180</x>
+      <y>260</y>
+      <width>21</width>
+      <height>23</height>
+     </rect>
+    </property>
+    <property name="cursor">
+     <cursorShape>PointingHandCursor</cursorShape>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">    background-color:none; /* Default background color */
+    color: white;              /* Default text color */
+    border: none;             /* Remove border */         
+    border-radius: 10px;      /* Rounded corners */
+	font-size:15px;
+	font-weight:700;
+	width:100px;
+</string>
+    </property>
+    <property name="text">
+     <string/>
+    </property>
+    <property name="icon">
+     <iconset>
+      <normaloff>icon/anterior.png</normaloff>icon/anterior.png</iconset>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="pushButton_random">
+    <property name="geometry">
+     <rect>
+      <x>290</x>
+      <y>260</y>
+      <width>21</width>
+      <height>23</height>
+     </rect>
+    </property>
+    <property name="cursor">
+     <cursorShape>PointingHandCursor</cursorShape>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">    background-color:none; /* Default background color */
+    color: white;              /* Default text color */
+    border: none;             /* Remove border */         
+    border-radius: 10px;      /* Rounded corners */
+	font-size:15px;
+	font-weight:700;
+	width:100px;
+</string>
+    </property>
+    <property name="text">
+     <string/>
+    </property>
+    <property name="icon">
+     <iconset>
+      <normaloff>icon/aleatorio.png</normaloff>icon/aleatorio.png</iconset>
     </property>
    </widget>
   </widget>
