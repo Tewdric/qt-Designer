@@ -1,0 +1,1 @@
+self.tela_cadastro = uic.loadUi("tela_cadastroP.ui")  # Carrega a segunda tela
