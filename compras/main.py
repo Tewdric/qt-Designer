@@ -4,7 +4,6 @@ from PyQt5.QtWidgets import QApplication, QMainWindow, QMessageBox, QTableWidget
 from tela_inicial import Ui_MainWindow
 from PyQt5 import QtWidgets, uic
 
-
 class tela_inicial(QMainWindow):
     def __init__(self):
         super(tela_inicial, self).__init__()

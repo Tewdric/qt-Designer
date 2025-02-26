@@ -52,7 +52,7 @@
     <string>Digite seu E-mail</string>
    </property>
   </widget>
-  <widget class="QPushButton" name="pushButton_entrar">
+  <widget class="QPushButton" name="pushButton_cadastrar">
    <property name="geometry">
     <rect>
      <x>150</x>

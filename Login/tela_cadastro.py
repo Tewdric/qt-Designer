@@ -24,9 +24,9 @@ class Ui_Form(object):
         self.lineEdit_email = QtWidgets.QLineEdit(Form)
         self.lineEdit_email.setGeometry(QtCore.QRect(60, 150, 281, 22))
         self.lineEdit_email.setObjectName("lineEdit_email")
-        self.pushButton_entrar = QtWidgets.QPushButton(Form)
-        self.pushButton_entrar.setGeometry(QtCore.QRect(150, 200, 93, 28))
-        self.pushButton_entrar.setObjectName("pushButton_entrar")
+        self.pushButton_cadastrar = QtWidgets.QPushButton(Form)
+        self.pushButton_cadastrar.setGeometry(QtCore.QRect(150, 200, 93, 28))
+        self.pushButton_cadastrar.setObjectName("pushButton_cadastrar")
         self.label = QtWidgets.QLabel(Form)
         self.label.setGeometry(QtCore.QRect(150, 20, 81, 31))
         font = QtGui.QFont()
@@ -43,7 +43,7 @@ class Ui_Form(object):
         self.lineEdit_senha.setPlaceholderText(_translate("Form", "Digite sua senha"))
         self.lineEdit_nome.setPlaceholderText(_translate("Form", "Digite seu nome"))
         self.lineEdit_email.setPlaceholderText(_translate("Form", "Digite seu E-mail"))
-        self.pushButton_entrar.setText(_translate("Form", "Entrar"))
+        self.pushButton_cadastrar.setText(_translate("Form", "Entrar"))
         self.label.setText(_translate("Form", "Cadastro"))
 
 
