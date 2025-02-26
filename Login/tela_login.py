@@ -22,7 +22,7 @@ class Ui_Form(object):
         self.lineEdit_senha.setGeometry(QtCore.QRect(70, 110, 281, 22))
         self.lineEdit_senha.setObjectName("lineEdit_senha")
         self.pushButton_entrar = QtWidgets.QPushButton(Form)
-        self.pushButton_entrar.setGeometry(QtCore.QRect(160, 170, 93, 28))
+        self.pushButton_entrar.setGeometry(QtCore.QRect(160, 150, 93, 28))
         self.pushButton_entrar.setObjectName("pushButton_entrar")
         self.label = QtWidgets.QLabel(Form)
         self.label.setGeometry(QtCore.QRect(180, 20, 51, 31))
@@ -30,6 +30,9 @@ class Ui_Form(object):
         font.setPointSize(12)
         self.label.setFont(font)
         self.label.setObjectName("label")
+        self.pushButton_cadastro = QtWidgets.QPushButton(Form)
+        self.pushButton_cadastro.setGeometry(QtCore.QRect(160, 190, 93, 28))
+        self.pushButton_cadastro.setObjectName("pushButton_cadastro")
 
         self.retranslateUi(Form)
         QtCore.QMetaObject.connectSlotsByName(Form)
@@ -41,6 +44,7 @@ class Ui_Form(object):
         self.lineEdit_senha.setPlaceholderText(_translate("Form", "Digite sua senha"))
         self.pushButton_entrar.setText(_translate("Form", "Entrar"))
         self.label.setText(_translate("Form", "Login"))
+        self.pushButton_cadastro.setText(_translate("Form", "Cadastro"))
 
 
 if __name__ == "__main__":
