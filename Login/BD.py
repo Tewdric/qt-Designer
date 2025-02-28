@@ -39,7 +39,7 @@ class DataBasse:
             cursor = conn.cursor()
             cursor.execute("INSERT INTO usuario (nome, senha, email) VALUES (%s, %s, %s)", (nome, senha, email))
             conn.commit()
-            print("Usuário cadastrado com sucesso!")
+            return 'Sucess'
         except MySQLdb.Error as e:
             print(f"Erro ao cadastrar usuário: {e}")
 

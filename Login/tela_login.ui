@@ -35,6 +35,9 @@
      <height>22</height>
     </rect>
    </property>
+   <property name="echoMode">
+    <enum>QLineEdit::Password</enum>
+   </property>
    <property name="placeholderText">
     <string>Digite sua senha</string>
    </property>
@@ -68,19 +71,6 @@
    </property>
    <property name="text">
     <string>Login</string>
-   </property>
-  </widget>
-  <widget class="QPushButton" name="pushButton_cadastro">
-   <property name="geometry">
-    <rect>
-     <x>160</x>
-     <y>190</y>
-     <width>93</width>
-     <height>28</height>
-    </rect>
-   </property>
-   <property name="text">
-    <string>Cadastro</string>
    </property>
   </widget>
  </widget>

@@ -6,72 +6,36 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>400</width>
-    <height>248</height>
+    <width>887</width>
+    <height>662</height>
    </rect>
   </property>
   <property name="windowTitle">
    <string>Form</string>
   </property>
-  <widget class="QLineEdit" name="lineEdit_senha">
-   <property name="geometry">
-    <rect>
-     <x>60</x>
-     <y>110</y>
-     <width>281</width>
-     <height>22</height>
-    </rect>
-   </property>
-   <property name="placeholderText">
-    <string>Digite sua senha</string>
-   </property>
-  </widget>
-  <widget class="QLineEdit" name="lineEdit_nome">
-   <property name="geometry">
-    <rect>
-     <x>60</x>
-     <y>70</y>
-     <width>281</width>
-     <height>22</height>
-    </rect>
-   </property>
-   <property name="placeholderText">
-    <string>Digite seu nome</string>
-   </property>
-  </widget>
-  <widget class="QLineEdit" name="lineEdit_email">
-   <property name="geometry">
-    <rect>
-     <x>60</x>
-     <y>150</y>
-     <width>281</width>
-     <height>22</height>
-    </rect>
-   </property>
-   <property name="placeholderText">
-    <string>Digite seu E-mail</string>
-   </property>
-  </widget>
+  <property name="styleSheet">
+   <string notr="true"/>
+  </property>
   <widget class="QPushButton" name="pushButton_cadastrar">
    <property name="geometry">
     <rect>
-     <x>150</x>
-     <y>200</y>
+     <x>230</x>
+     <y>380</y>
      <width>93</width>
      <height>28</height>
     </rect>
    </property>
    <property name="text">
-    <string>Entrar</string>
+    <string>Cadastrar</string>
    </property>
   </widget>
   <widget class="QLabel" name="label">
    <property name="geometry">
     <rect>
-     <x>150</x>
-     <y>20</y>
-     <width>81</width>
-     <height>31</height>
+     <x>240</x>
+     <y>200</y>
+     <width>79</width>
+     <height>24</height>
     </rect>
    </property>
    <property name="font">
@@ -79,10 +43,89 @@
      <pointsize>12</pointsize>
     </font>
    </property>
+   <property name="styleSheet">
+    <string notr="true">color:rgb(85, 0, 0);</string>
+   </property>
    <property name="text">
     <string>Cadastro</string>
    </property>
   </widget>
+  <widget class="QLabel" name="label_2">
+   <property name="geometry">
+    <rect>
+     <x>380</x>
+     <y>20</y>
+     <width>521</width>
+     <height>651</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string/>
+   </property>
+   <property name="pixmap">
+    <pixmap>pngwing.com.png</pixmap>
+   </property>
+   <property name="scaledContents">
+    <bool>true</bool>
+   </property>
+  </widget>
+  <widget class="QLineEdit" name="lineEdit_email">
+   <property name="geometry">
+    <rect>
+     <x>120</x>
+     <y>330</y>
+     <width>321</width>
+     <height>22</height>
+    </rect>
+   </property>
+   <property name="placeholderText">
+    <string>Digite seu E-mail</string>
+   </property>
+  </widget>
+  <widget class="QLineEdit" name="lineEdit_nome">
+   <property name="geometry">
+    <rect>
+     <x>120</x>
+     <y>250</y>
+     <width>321</width>
+     <height>22</height>
+    </rect>
+   </property>
+   <property name="placeholderText">
+    <string>Digite seu nome</string>
+   </property>
+  </widget>
+  <widget class="QLineEdit" name="lineEdit_senha">
+   <property name="geometry">
+    <rect>
+     <x>120</x>
+     <y>290</y>
+     <width>321</width>
+     <height>22</height>
+    </rect>
+   </property>
+   <property name="inputMethodHints">
+    <set>Qt::ImhHiddenText|Qt::ImhNoAutoUppercase|Qt::ImhNoPredictiveText|Qt::ImhPreferNumbers|Qt::ImhSensitiveData</set>
+   </property>
+   <property name="inputMask">
+    <string/>
+   </property>
+   <property name="echoMode">
+    <enum>QLineEdit::Password</enum>
+   </property>
+   <property name="dragEnabled">
+    <bool>false</bool>
+   </property>
+   <property name="placeholderText">
+    <string>Digite sua senha</string>
+   </property>
+  </widget>
+  <zorder>label_2</zorder>
+  <zorder></zorder>
+  <zorder>lineEdit_nome</zorder>
+  <zorder>lineEdit_senha</zorder>
+  <zorder>pushButton_cadastrar</zorder>
+  <zorder>label</zorder>
  </widget>
  <resources/>
  <connections/>
