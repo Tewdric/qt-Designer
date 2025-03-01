@@ -15,7 +15,6 @@ class tela_login(QtWidgets.QWidget, Ui_Form):
         self.login = uic.loadUi("tela_login.ui")
         
         self.pushButton_entrar.clicked.connect(self.validar_login)
-        self.pushButton_cadastro.clicked.connect(self.cadastrar_usuario)
         
         db = DataBasse()
         dados = db.carregar_dados()
@@ -24,40 +23,38 @@ class tela_login(QtWidgets.QWidget, Ui_Form):
     def validar_login(self):
         login = self.lineEdit_login.text()
         senha = self.lineEdit_senha.text()
-        
+
         db = DataBasse()
         dados = db.carregar_dados()
-        
-        for nome, senha in dados:
-            if login == nome and senha == senha:
+
+
+        for i in range(len(dados)):
+            print(dados[i][0],dados[i][1])
+            if login == dados[i][0] and senha == dados[i][1]:
                 print("Login realizado com sucesso")
-                self.home = uic.loadUi("tela_home.ui")
-                self.home.show()
                 self.hide()
+                self.cadastro = uic.loadUi("tela_cadastro.ui")
+                self.cadastro.show()
                 
-                self.home.label_saudacao.setText(f"Olá {nome}")
-                break
-            else:
-                QMessageBox.critical(self, "Erro", "Login ou senha inválidos")
-                break
-        
-    def cadastrar_usuario(self):
-        self.cadastro = uic.loadUi("tela_cadastro.ui")
-        self.cadastro.show()
-        self.hide()
-        
-        self.cadastro.pushButton_cadastrar.clicked.connect(self.cadastrar)
-        
+                self.cadastro.pushButton_cadastrar.clicked.connect(self.cadastrar)
+
+               
     def cadastrar(self):
         nome = self.cadastro.lineEdit_nome.text()
         senha = self.cadastro.lineEdit_senha.text()
         email = self.cadastro.lineEdit_email.text()
-        
-        db = DataBasse()
-        db.cadastrar_usuario(nome, senha, email)
-        
-        self.login.show()
-        self.cadastro.hide()
+        print(nome,senha,email)
+
+
+        if(nome == "" and senha == "" and email == ""):
+            QMessageBox.critical(self, "Erro", "Cadastro não realizado.")
+        else:
+            db = DataBasse()
+            db.cadastrar_usuario(nome, senha, email)
+            
+            QMessageBox.information(self, "Sucesso", "Cadastro realizado com sucesso.")
+            self.cadastro.hide()
+
         
 
 if __name__ == "__main__":
