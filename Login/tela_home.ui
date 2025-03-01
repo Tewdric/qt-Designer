@@ -6,35 +6,31 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>637</width>
-    <height>519</height>
+    <width>640</width>
+    <height>514</height>
    </rect>
   </property>
   <property name="windowTitle">
    <string>Form</string>
   </property>
-  <widget class="QLabel" name="label">
-   <property name="geometry">
-    <rect>
-     <x>0</x>
-     <y>0</y>
-     <width>641</width>
-     <height>521</height>
-    </rect>
-   </property>
-   <property name="styleSheet">
-    <string notr="true">opacity:0.4;</string>
-   </property>
-   <property name="text">
-    <string/>
-   </property>
-   <property name="pixmap">
-    <pixmap>pngwing.com.png</pixmap>
-   </property>
-   <property name="scaledContents">
-    <bool>true</bool>
-   </property>
-  </widget>
+  <layout class="QGridLayout" name="gridLayout">
+   <item row="0" column="0">
+    <widget class="QLabel" name="label">
+     <property name="styleSheet">
+      <string notr="true">opacity:0.4;</string>
+     </property>
+     <property name="text">
+      <string/>
+     </property>
+     <property name="pixmap">
+      <pixmap>pngwing.com.png</pixmap>
+     </property>
+     <property name="scaledContents">
+      <bool>true</bool>
+     </property>
+    </widget>
+   </item>
+  </layout>
   <widget class="QLabel" name="label_saudacao">
    <property name="geometry">
     <rect>
