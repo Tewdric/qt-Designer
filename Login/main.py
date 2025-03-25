@@ -29,7 +29,7 @@ class tela_login(QtWidgets.QWidget, Ui_Form):
 
 
         for i in range(len(dados)):
-            print(dados[i][0],dados[i][1])
+            
             if login == dados[i][0] and senha == dados[i][1]:
                 print("Login realizado com sucesso")
                 self.hide()
@@ -37,6 +37,9 @@ class tela_login(QtWidgets.QWidget, Ui_Form):
                 self.cadastro.show()
                 
                 self.cadastro.pushButton_cadastrar.clicked.connect(self.cadastrar)
+            else:
+                QMessageBox.critical(self, "Erro", "Login ou senha incorretos.")
+                break
 
                
     def cadastrar(self):
