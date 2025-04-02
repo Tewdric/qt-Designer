@@ -20,7 +20,7 @@
    <property name="geometry">
     <rect>
      <x>230</x>
-     <y>380</y>
+     <y>470</y>
      <width>93</width>
      <height>28</height>
     </rect>
@@ -120,12 +120,51 @@
     <string>Digite sua senha</string>
    </property>
   </widget>
+  <widget class="QLineEdit" name="lineEdit_cpf">
+   <property name="geometry">
+    <rect>
+     <x>120</x>
+     <y>370</y>
+     <width>321</width>
+     <height>22</height>
+    </rect>
+   </property>
+   <property name="placeholderText">
+    <string>Digite seu cpf</string>
+   </property>
+  </widget>
+  <widget class="QDateEdit" name="dateEdit">
+   <property name="geometry">
+    <rect>
+     <x>270</x>
+     <y>410</y>
+     <width>110</width>
+     <height>22</height>
+    </rect>
+   </property>
+  </widget>
+  <widget class="QLabel" name="label_3">
+   <property name="geometry">
+    <rect>
+     <x>190</x>
+     <y>410</y>
+     <width>71</width>
+     <height>16</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>Nascimento</string>
+   </property>
+  </widget>
+  <zorder>lineEdit_email</zorder>
   <zorder>label_2</zorder>
-  <zorder></zorder>
   <zorder>lineEdit_nome</zorder>
   <zorder>lineEdit_senha</zorder>
   <zorder>pushButton_cadastrar</zorder>
   <zorder>label</zorder>
+  <zorder>lineEdit_cpf</zorder>
+  <zorder>dateEdit</zorder>
+  <zorder>label_3</zorder>
  </widget>
  <resources/>
  <connections/>

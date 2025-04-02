@@ -26,7 +26,7 @@ class DataBasse:
                 
                 return resultados
     
-    def cadastrar_usuario(self, nome, senha, email):
+    def cadastrar_usuario(self, nome, senha, email, cpf, nascimento):
         try:
             conn = MySQLdb.connect(
                 host="localhost",
@@ -37,11 +37,38 @@ class DataBasse:
             )
 
             cursor = conn.cursor()
-            cursor.execute("INSERT INTO usuario (nome, senha, email) VALUES (%s, %s, %s)", (nome, senha, email))
+            cursor.execute("INSERT INTO usuario (nome, senha, email, cpf, nascimento) VALUES (%s, %s, %s,%s,%s)", (nome, senha, email, cpf, nascimento))
             conn.commit()
             return 'Sucess'
         except MySQLdb.Error as e:
             print(f"Erro ao cadastrar usuário: {e}")
+    
+    def selecionar_usuario(self):
+        try:
+            conn = MySQLdb.connect(
+                host="localhost",
+                user="root",
+                passwd="",
+                db="qt_atividade",
+                charset="utf8"
+            )
+
+            cursor = conn.cursor()
+            cursor.execute("SELECT * FROM usuario")
+            dados = cursor.fetchall()  # Obtém todos os registros da tabela
+
+            return dados  # Retorna os dados obtidos
+
+        except MySQLdb.Error as e:
+            print(f"Erro ao cadastrar usuário: {e}")
+        finally:
+            if conn:
+                cursor.close()
+                conn.close()
+
+
+     
+
 
 
 teste = DataBasse()
